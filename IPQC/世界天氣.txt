@@ -1,0 +1,64 @@
+https://home.openweathermap.org/
+
+API key: 5af4fd479927824c032b9eb43db8130f
+
+天氣
+https://api.openweathermap.org/data/2.5/weather?q=Taipei,TW&units=metric&lang=zh_tw&appid=5af4fd479927824c032b9eb43db8130f
+
+熟悉 PHP 和其框架：如 Laravel, Symfony 等。
+
+資料庫技能：熟悉 SQL 語言，具體如 MySQL, PostgreSQL 等。
+
+前端技術：基本了解 HTML, CSS, 和 JavaScript。
+
+版本控制：熟悉 Git。
+
+API 開發：熟悉 RESTful API 或 GraphQL。
+
+安全性知識：了解基本的網站安全知識，如 XSS、SQL 注入等。
+
+問題解決能力：能夠獨立解決問題和調試。
+
+良好的溝通能力：能夠清晰地與團隊成員和客戶溝通。
+
+---PHP---
+點擊Button按鈕時執行php物件方法
+撰寫PHP程式語言時，有時會宣告類別並建立物件，
+
+在網頁上我們也常用表單的Button，
+
+希望按了Button之後，可以執行物件的某個方法，
+
+1
+2
+<input type="submit" name="submitButton" value="存入"
+onclick="<?php $this->insert_slogan(); ?>  />
+但這個作法卻常常出問題，為什麼呢?
+
+因為在button中onclick只能執行Javascript內的function，
+
+所以這個方法無效，我們可以把onclick那段敘述刪了。
+
+ 
+
+改另一個方法，就是由PHP程式來判斷Button是否被觸動了，
+
+1
+<input type="submit" name="submitButton" value="存入" />
+在程式最下方加入一段PHP語法：
+
+1
+2
+3
+4
+5
+<?php
+   if(isset($_POST['submitButton'])){
+      $this->insert_slogan();
+   }
+?>
+因為我的表單設定按了送出之後，會用POST方式傳送參數，
+
+所以此PHP的程式就是判斷POST是否由submitButton發動的，
+
+若是的話則呼叫insert_slogan()方法!
